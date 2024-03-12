@@ -1,0 +1,13 @@
+hydra:
+  run:
+    dir: logdir/${algo}/${env_id}/${exp_id}/${seed}
+
+defaults:
+  - atrl
+
+feat:
+  type: "dummy"
+
+planning:
+  planner: "guided_diffusion"
+  guidance_coef: 0.05

@@ -1,0 +1,54 @@
+hydra:
+  run:
+    dir: logdir/${algo}/${env_id}/${exp_id}/${seed}
+
+algo: "atrl"
+seed: 0
+env_id: "antmaze-medium-diverse-v2"
+exp_id: "default"
+logdir: ${hydra:run.dir}
+gamma: 0.99
+reward_min: 0
+reward_max: 1
+
+feat:
+  type: "fourier"
+  dim: 128
+
+training:
+  num_steps: 100000
+  eval_every: 5000
+  save_every: 5000
+  batch_size: 2048
+  num_workers: 8
+  resume: False
+  log_psi_video: False
+  weighted_regression: False
+  
+model:
+  embed_dim: 256
+  embed_type: "positional"
+  ema_rate: 0.995
+  lr: 3e-4
+  wd: 1e-6
+  warmup_steps: 500
+  sde: "vpsde"
+  beta_min: 0.1
+  beta_max: 20
+  num_steps: 1000
+  continuous: False
+
+sampling:
+  predictor: "ddim"
+  corrector: "none"
+  n_inference_steps: 50
+  eta: 0.0
+
+planning:
+  planner: "guided_diffusion"
+  guidance_coef: 0.5
+  num_samples: 1000
+  num_elites: 1
+
+eval:
+  num_episodes: 10

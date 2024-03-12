@@ -1,0 +1,20 @@
+-e git+https://github.com/zchuning/D4RL.git@409678ecf920353b4f4314a427ef624a9f95f588#egg=D4RL
+diffusers==0.25.0
+flax==0.8.0
+gym==0.23.1
+h5py==3.10.0
+hydra-core==1.3.2
+imageio==2.21.2
+jax==0.4.23
+matplotlib==3.7.2
+mjrl @ git+https://github.com/aravindr93/mjrl@3871d93763d3b49c4741e6daeaebbc605fe140dc
+ml_collections==0.1.1
+mujoco_py==2.1.2.14
+numpy==1.26.4
+omegaconf==2.3.0
+opencv_python==4.9.0.80
+optax==0.1.9
+orbax==0.1.9
+Pillow==10.1.0
+torch==2.1.1+cpu
+tqdm==4.66.1
