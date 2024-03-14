@@ -6,7 +6,7 @@
 
 <sup>1</sup>University of Washington
 
-This is a Jax implementation of Generalized Occupancy Models (GOMs). GOM is an unsupervised reinforcement learning method that models the distribution of all outcomes in an offline dataset under dynamics consistency, where the outcomes are discounted sums of state-dependent cumulants. The outcome model is paired with an readout policy trained to generate actions that realize a particular outcome at a state. Assuming that the rewards can be linearly expressed by the cumulants, transferring to downstream tasks boils down to performing a linear regression to identify the linear coefficients and using them to select the optimal realizable outcome.
+This is a Jax implementation of Generalized Occupancy Models (GOMs). GOM is an unsupervised reinforcement learning method that models the distribution of all possible outcomes represented as discounted sums of state-dependent cumulants. The outcome model is paired with a readout policy that produces an action to realize a particular outcome. Assuming a linear dependence of rewards on cumulants, transferring to downstream tasks reduces to performing linear regression and solving a simple optimization problem for the optimal possible outcome. 
 
 ## Instructions
 
